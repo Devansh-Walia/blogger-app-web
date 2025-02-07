@@ -1,6 +1,20 @@
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
+import Login from "./components/auth/Login";
+import Posts from "./components/blog/Posts";
+import Post from "./components/blog/Post";
+
 function App() {
   return (
-    <div className="flex flex-col items-center justify-center h-screen text-red-300 bg-gradient-to-br from-gray-300 via-teal-700 to-gray-800"></div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/post" element={<Post />} />
+        <Route path="/posts" element={<Posts />} />
+
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

@@ -1,16 +1,21 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import Google from "../../assets/svgs/google";
 import Facebook from "../../assets/svgs/facebook";
+import { useAuth } from "../../contexts/AuthContext";
+import appConfig from "../../utils/config";
 
 const Login: React.FC = () => {
-  const navigate = useNavigate();
+  const { loginWithGoogle, loginWithFacebook } = useAuth();
 
   const handleSocialLogin = (provider: "google" | "facebook") => {
-    // TODO: Implement actual social login logic
-    localStorage.setItem("isAuthenticated", "true");
-    navigate("/dashboard");
+    if (provider === "google") {
+      loginWithGoogle();
+    } else {
+      loginWithFacebook();
+    }
   };
+
+  console.log(appConfig);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-50">

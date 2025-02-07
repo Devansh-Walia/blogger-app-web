@@ -1,22 +1,109 @@
-# cra-template-tailwindcss-typescript
+# Blogger App Web
 
-A streamlined [Tailwind CSS v3.1](https://tailwindcss.com) template for [Create React App](https://github.com/facebook/create-react-app) in [TypeScript](https://www.typescriptlang.org/).
+A modern blogging platform built with React and TypeScript, featuring authentication and a clean, responsive interface styled with Tailwind CSS.
 
-> This template installs and sets up [Tailwind CSS](https://tailwindcss.com) with TypeScript support.
+## Features
 
-## Usage
+- 🔐 User Authentication
+  - Social login support (Google, Facebook)
+  - Protected routes for authenticated users
+- 📝 Blog Management
+  - Create and manage blog posts
+  - Dashboard view for post management
+  - Individual post view
+- 🎨 Modern UI
+  - Responsive design
+  - Tailwind CSS styling
+  - Clean and intuitive interface
+
+## Tech Stack
+
+- **Frontend Framework:** React 18
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Routing:** React Router v7
+- **HTTP Client:** Axios
+- **State Management:** React Context
+- **Authentication:** Cookie-based (js-cookie)
+
+## Prerequisites
+
+- Node.js (v14 or higher recommended)
+- npm or yarn
+
+## Setup
+
+1. Clone the repository:
 
 ```bash
-npx create-react-app --template tailwindcss-typescript
+git clone https://github.com/yourusername/blogger-app-web.git
+cd blogger-app-web
 ```
 
-## Credits
+2. Install dependencies:
 
-This project was made possible thanks to the following projects.
+```bash
+npm install
+```
 
-1. [GeoffSelby/cra-template-tailwindcss](https://github.com/GeoffSelby/cra-template-tailwindcss) - A streamlined Tailwind CSS template for Create React App (in JavaScript).
-2. [cra-template-typescript](https://github.com/facebook/create-react-app/tree/master/packages/cra-template-typescript) - An official TypeScript template for create-react-app.
+3. Create a `.env` file in the root directory:
+
+```bash
+cp .env.example .env
+```
+
+4. Configure environment variables in `.env`:
+
+```
+REACT_APP_SERVER_URL=your_server_url_here
+```
+
+## Available Scripts
+
+- **Start Development Server:**
+
+  ```bash
+  npm start
+  ```
+
+  Runs the app in development mode at [http://localhost:3002](http://localhost:3002)
+
+- **Build for Production:**
+
+  ```bash
+  npm run build
+  ```
+
+  Creates an optimized production build in the `build` folder
+
+- **Run Tests:**
+  ```bash
+  npm test
+  ```
+  Launches the test runner in interactive watch mode
+
+## Project Structure
+
+```
+src/
+├── assets/         # Static assets and SVG components
+├── components/     # React components
+│   ├── auth/      # Authentication related components
+│   ├── blog/      # Blog related components
+│   └── layout/    # Layout components
+├── contexts/      # React contexts (e.g., AuthContext)
+├── styles/        # Global styles and Tailwind config
+└── utils/         # Utility functions and constants
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
 ## License
 
-MIT © [Sung M. Kim](https://sung.codes)
+This project is licensed under the MIT License - see the LICENSE file for details.
